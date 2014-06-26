@@ -1,0 +1,21 @@
+<td class="actions group">
+    <img src="<%= getUrl('/images/view.png') %>" class="view" title="Смотреть на карте" />
+    <img src="<%= getUrl('/images/edit.png') %>" class="edit" title="Редактировать" />
+    <img src="<%= getUrl('/images/perform.png') %>" class="perform" title="Выполнить" />
+    <img src="<%= getUrl('/images/delete.png') %>" class="delete" title="Удалить" />
+</td>
+<td class="callsign"><%= callsign %></td>
+<td class="arriveDatetime"><%= arriveDatetime %></td>
+<td class="clientName <%= carTypeColor %>"><%= customerName %></td>
+<td class="clientPhone <%= carTypeColor %>"><%= customerPhone %></td>
+<td class="route <%= carTypeColor %>"><%= route %></td>
+<td class="cost <%= paymentColor %>"><%= cost %></td>
+<td class="status"><%= statusName %></td>
+<td class="payment"><%= (payment=="cash_payment_tarif") ? "Нал" : "Б/нал" %></td>
+<td class="travelNumber"></td>
+<td class="dispatcherId"><%= dispatcherId %></td>
+<td class="dispatcherNote"><%= dispatcher_note %></td>
+<td class="driverNote"><%= driver_note %></td>
+<td class="createDatetime"><%= createDatetime %></td>
+<td class="sms"><%= sms %></td>
+<td class="tarifId"><%= tarifId %></td>

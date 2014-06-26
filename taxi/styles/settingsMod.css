@@ -1,0 +1,259 @@
+/* 
+    Document   : settingsMod styles for screen media
+    Created on : 03/06/2014
+    Author     : 
+    Description: 
+*/
+div.settingsMod {
+    /*padding: 5px 0;*/
+}
+div.settingsMod p.title {
+    text-transform: uppercase;
+}
+div#tarifficationMod > div {
+    margin-top: 25px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    padding: 10px;
+}
+div#tarifficationMod > div:first-child {
+    margin-top: 15px;
+}
+div#tarifficationMod > div p.title {
+    margin-top: -18px;
+    margin-left: 10px;
+    width: 160px;
+    padding: 0 5px 0 7px;
+    background-color: #fff;
+}
+div#tarifficationMod > div ul {
+    padding: 7px 5px 2px;
+}
+div#tarifficationMod > div ul li {
+    display: block;
+    margin-top: 1px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(160, 160, 160);
+}
+div#tarifficationMod > div ul li:hover {
+    background-color: rgba(160, 160, 160, 0.7);
+}
+
+form.tarifGrid table {
+    margin: 15px 5px 5px;
+    table-layout: fixed;
+    width: 99%;
+}
+form.tarifGrid table th {
+    padding: 5px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+form.tarifGrid table tbody th {
+    text-align: right;
+    padding-right: 15px;
+}
+form.tarifGrid table th, form.tarifGrid table td {
+    width: 50px;
+}
+form.tarifGrid table td input {
+    width: 98%;
+    text-align: center;
+}
+
+/****************************/
+
+.commonTariffication {
+    padding: 5px;
+}
+
+.commonTariffication label,
+.commonTariffication div.extraPointField {
+    display: block;
+    padding: 5px 0;
+}
+.commonTariffication label span {
+    display: inline-block;
+/*    text-align: right;*/
+    margin-right: 7px;
+}
+.commonTariffication input[type="text"] {
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+.commonTariffication div.services {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #888;
+}
+
+.commonTariffication div.services div.orderAdditionalServices {
+    width: 58%;
+    float: left;
+}
+
+.commonTariffication div.services div.addNewAdditionalService {
+    width: 40%;
+    float: right;
+}
+
+.orderAdditionalService {
+    overflow: hidden;
+}
+
+.orderAdditionalService label {
+    float: left;
+}
+.orderAdditionalService label.orderAdditionalServiceName {
+    width: 200px;
+}
+.orderAdditionalService label.orderAdditionalServiceName span {
+    width: 130px;
+}
+.orderAdditionalService label input[type="radio"] {
+    margin-top: 7px;
+}
+
+
+div.extraSnow {
+    padding-top: 15px;
+}
+
+div.extraSnow input, div.extraSnow label {
+    float: left;
+}
+
+div.extraSnow input:not([type="checkbox"]) {
+    margin-left: 10px;
+}
+
+div.extraNonCash {
+    overflow: hidden;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid #888;
+}
+
+div.extraNonCash input, div.extraNonCash label {
+    float: left;
+}
+div.extraNonCash input {
+    margin: 0 5px;
+}
+
+div.extraSector {
+    padding: 5px 0 10px;
+}
+div.extraSector label{
+    padding-top: 5px;
+}
+label.extraSectorDayOff {
+    width: 40%;
+    float: left;
+}
+label.extraSectorSumm {
+    width: 57%;
+    float: right;
+}
+label.extraPassenger, label.distancesConversionRate {
+    display: inline-block;
+    width: 45%;
+}
+label.extraPassenger input, label.distancesConversionRate input {
+    margin: 0 5px;
+}
+
+/********************* Personal Settings ***********************/
+div#personal {
+    /*border: 1px dotted red;*/
+    padding: 20px 10px 10px;
+}
+div#personal > ul li {
+    color: #fff;
+    display: block;
+    margin-top: 1px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(160, 160, 160);
+}
+div#personal > ul li:hover {
+    background-color: rgba(160, 160, 160, 0.7);
+}
+
+div.settingsReportOrders {
+    padding: 10px 0;
+}
+div.settingsReportOrders > div {
+    margin-right: 2%;
+    width: 32%;
+}
+div.settingsReportOrders > div.countOfRecords {
+    margin-bottom: 15px;
+}
+div.settingsReportOrders > div.countOfRecords span {
+    float: left;
+    width: 250px;
+    text-align: right;
+    padding: 5px 5px 0 0;
+}
+div.settingsReportOrders > div.countOfRecords input {
+    width: 40px;
+    float: left;
+}
+div.settingsReportOrders > div:last-child {
+    margin-right: 0;
+}
+div.settingsReportOrders > div label {
+    width: 100%;
+    display: block;
+    margin-bottom: 1px;
+}
+div.settingsReportOrders > div label span,
+div.settingsReportOrders > div label input {
+    display: block;
+    /*border: 1px dotted red;*/
+}
+div.settingsReportOrders > div label input {
+    width: 5%;
+    min-width: 20px;
+    float: left;
+}
+div.settingsReportOrders > div label span {
+    width: 90%;
+    float: right;
+    text-align: left;
+}
+
+div.settingsMainPageOrders {
+    padding: 15px 0;
+}
+div.settingsMainPageOrders > div {
+    margin-right: 2%;
+    width: 32%;
+}
+div.settingsMainPageOrders > div:last-child {
+    margin-right: 0;
+}
+div.settingsMainPageOrders > div label {
+    width: 100%;
+    display: block;
+    margin-bottom: 1px;
+}
+div.settingsMainPageOrders > div label span,
+div.settingsMainPageOrders > div label input {
+    display: block;
+}
+div.settingsMainPageOrders > div label input {
+    width: 5%;
+    min-width: 20px;
+    float: left;
+}
+div.settingsMainPageOrders > div label span {
+    width: 90%;
+    float: right;
+    text-align: left;
+}

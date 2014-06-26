@@ -1,0 +1,307 @@
+﻿/* 
+    Created on : 28.03.2014, 15:14:24
+*/
+div.driverListTable {
+    width: 1050px;
+    padding: 10px;
+    color: #000;
+}
+div.driverListTable div.controlPannel {
+    padding: 0 0 15px;
+}
+div.driverListTable img.seachByCallsign {
+    display: inline-block;
+    margin: 4px 0 0 -28px;
+    padding: 5px;
+    cursor: pointer;
+    width: 18px;
+}
+div.driverListTable div.controlPannel button[name="addNewDraver"]{
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+div.driverListTable label.driverSearchCallsign {
+    display: inline-block;
+    margin-top: 5px;
+}
+div.driverListTable label.filterByStatus {
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: 20px;
+}
+div.driverListTable label.filterByStatus select {
+    width: 180px;
+    height: 23px;
+    margin-left: 3px;
+}
+div.driverListTable div.namesOfFields {
+    border: 1px solid #666;
+    background-color: #666;
+    color: rgb(240, 240, 240);
+}
+div.driverListTable div.namesOfFields span {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px 2px;
+}
+div.driverListTable div.driverInfo {
+    border: 1px solid #666;
+    border-top: none;
+}
+div.driverListTable div.driverInfo:nth-child(2n) {
+    background-color: rgba(240, 240, 240, 0.7);
+}
+
+div.driverListTable div.driverInfo.white {
+    background-color: rgb(255, 255, 255);
+}
+div.driverListTable div.driverInfo.red {
+    background-color: rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.8);
+}
+div.driverListTable div.driverInfo.green {
+    background-color: rgb(0, 255, 0);
+    background-color: rgba(0, 255, 0, 0.5);
+}
+div.driverListTable div.driverInfo.blue {
+    background-color: rgb(0, 0, 255);
+    background-color: rgba(0, 100, 255, 0.8);
+}
+div.driverListTable div.driverInfo.azure {
+    background-color: rgb(0, 190, 255);
+    background-color: rgba(0, 190, 255, 0.35);
+}
+div.driverListTable div.driverInfo.gray {
+    background-color: rgb(130, 130, 130);
+    background-color: rgba(130, 130, 130, 0.6);
+}
+div.driverListTable div.driverInfo.black {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.35);
+}
+div.driverListTable div.driverInfo.yellow {
+    background-color: rgb(255, 255, 0);
+    background-color: rgba(255, 255, 0, 0.7);
+}
+
+div.driverListTable div div.mainDriverInfo {
+}
+div.driverListTable div.namesOfFields > span,
+div.driverListTable div.mainDriverInfo > span {
+    border-right: 1px solid #666;
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px 2px;
+    display: block;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div.driverListTable div.namesOfFields > span {
+    border-right-color: rgb(160, 160, 160);
+}
+div.driverListTable div.namesOfFields > span:last-child, 
+div.driverListTable div.mainDriverInfo > span:last-child {
+    border-right: none;
+}
+div.driverListTable span.driverDetail {
+    width: 2.5%;
+}
+div.driverListTable div.driverInfo span.driverDetail {
+    cursor: pointer;
+    transition: all 0.3s;
+    background: url(../images/Arrow.png) center center no-repeat;
+}
+div.driverListTable div.driverInfo span.driverDetail.view {
+    background-image: url(../images/downArrow.png);
+}
+div.driverListTable span.driverCallsign {
+    width: 4%;
+}
+div.driverListTable div.namesOfFields span.driverCallsign {
+    background: url(../images/flag_green.png) 15px 7px no-repeat;
+}
+div.driverListTable span.driverSurname {
+    width: 11%;
+}
+div.driverListTable span.driverName {
+    width: 10%;
+}
+div.driverListTable span.driverPatronymic {
+    width: 11%;
+}
+div.driverListTable span.carNumber {
+    width: 8%;
+}
+div.driverListTable span.carModel {
+    width: 9%;
+}
+div.driverListTable span.carColor {
+    width: 8%;
+}
+div.driverListTable div.driverInfo span.carColor {
+    opacity: 0.9;
+}
+div.driverListTable span.carType {
+    width: 9%;
+}
+div.driverListTable span.carNotes {
+    width: 22%;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+div.driverListTable div.detailDriverInfo {
+    padding: 20px;
+    border-top: 1px solid #666;
+    display: none;
+}
+/*div.driverListTable span.carNotes span.tooltip {
+    background-color: #fff;
+    color: #666;
+    z-index: 1000;
+    position: absolute;
+    left: 20px;
+    top: -30px;
+}*/
+
+div.driverListTable div.detailDriverInfo > div {
+    width: 41%;
+    float: left;
+    margin-left: 3%;
+}
+div.driverListTable div.detailDriverInfo > div:first-child {
+    width: 12%;
+    margin-left: 0;
+}
+div.driverListTable div.detailDriverInfo > div:last-child p {
+    padding: 5px 0;
+}
+div.driverListTable div.detailDriverInfo > div button.editDriver,
+div.driverListTable div.detailDriverInfo > div button.deleteDriver {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+div.driverListTable div.detailDriverInfo p {
+    padding: 4px 0;
+    border-bottom: 1px solid #999;
+}
+div.driverListTable div.detailDriverInfo p.driver_mobile_phone span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_phone span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_address span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_passport span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_dob span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_admission_date span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_dismissal_date span.nameOfField,
+div.driverListTable div.detailDriverInfo p.taxi_status span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_tariff_ind span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_type span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_self_carport span.nameOfField {
+    display: inline-block;
+    text-align: right;
+    margin-right: 1%;
+    width: 45%;
+}
+div.driverListTable div.detailDriverInfo p.driver_mobile_phone span.valueOfField,
+div.driverListTable div.detailDriverInfo p.driver_phone span.valueOfField,
+div.driverListTable div.detailDriverInfo p.driver_address span.valueOfField,
+div.driverListTable div.detailDriverInfo p.driver_passport span.valueOfField,
+div.driverListTable div.detailDriverInfo p.driver_dob span.valueOfField,
+div.driverListTable div.detailDriverInfo p.driver_admission_date span.valueOfField,
+div.driverListTable div.detailDriverInfo p.driver_dismissal_date span.valueOfField,
+div.driverListTable div.detailDriverInfo p.taxi_status span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_tariff_ind span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_type span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_self_carport span.valueOfField {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+}
+
+div.driverListTable div.detailDriverInfo p.car_year span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_commission span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_commission_period_pay span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_fee span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_fee_period span.nameOfField {
+    display: inline-block;
+    text-align: right;
+    margin-right: 1%;
+    width: 57%;
+}
+div.driverListTable div.detailDriverInfo p.car_year span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_commission span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_commission_period_pay span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_fee span.valueOfField,
+div.driverListTable div.detailDriverInfo p.car_fee_period span.valueOfField {
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+}
+div.driverListTable div.detailDriverInfo p.car_terminal span.nameOfField,
+div.driverListTable div.detailDriverInfo p.car_condition span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_see_non_cash span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_only_non_cash span.nameOfField,
+div.driverListTable div.detailDriverInfo p.driver_passenger_phone span.nameOfField {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 57%;
+}
+div.driverListTable div.detailDriverInfo p.car_terminal span.valueOfField.yes,
+div.driverListTable div.detailDriverInfo p.car_condition span.valueOfField.yes,
+div.driverListTable div.detailDriverInfo p.driver_see_non_cash span.valueOfField.yes,
+div.driverListTable div.detailDriverInfo p.driver_only_non_cash span.valueOfField.yes,
+div.driverListTable div.detailDriverInfo p.driver_passenger_phone span.valueOfField.yes {
+    width: 13px;
+    height: 13px;
+    background: url(../images/plusWay.png) center center no-repeat;
+    display: block;
+    margin-left: 76px;
+    float: left;
+}
+div.driverListTable div.detailDriverInfo p.car_self_carport span.valueOfField.yes {
+    width: 13px;
+    height: 13px;
+    background: url(../images/plusWay.png) center center no-repeat;
+    margin-left: 90px;
+}
+div.driverListTable div.detailDriverInfo p.car_terminal span.valueOfField.no,
+div.driverListTable div.detailDriverInfo p.car_condition span.valueOfField.no,
+div.driverListTable div.detailDriverInfo p.driver_see_non_cash span.valueOfField.no,
+div.driverListTable div.detailDriverInfo p.driver_only_non_cash span.valueOfField.no,
+div.driverListTable div.detailDriverInfo p.driver_passenger_phone span.valueOfField.no {
+    width: 15px;
+    height: 13px;
+    background: url(../images/minus.png) center center no-repeat;
+    display: block;
+    margin-left: 75px;
+    float: left;
+}
+div.driverListTable div.detailDriverInfo p.car_self_carport span.valueOfField.no {
+    width: 15px;
+    height: 13px;
+    background: url(../images/minus.png) center center no-repeat;
+    margin-left: 89px;
+}
+
+div.driverListTable .driverTablePagination {
+    overflow: hidden;
+    margin: 20px 300px 0;
+}
+div.driverListTable .pagination a {
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    line-height: 24px;
+}
+
+div.driverListTable .pagination input {
+    width: 200px;
+    height: 30px;
+    /*font-size: 30px;*/
+}

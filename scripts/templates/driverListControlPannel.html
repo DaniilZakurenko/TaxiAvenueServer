@@ -1,0 +1,12 @@
+<label class="driverSearchCallsign left">Поиск по позывному:<input type="text" name="driverSearchCallsign" /></label>
+<img class="left seachByCallsign" src="<%= getUrl('/images/find.png') %>" />
+<label class="filterByStatus left">Фильтр по статусу:
+    <select name="filterByStatus"><option></option>
+    <%
+        var statusTypes = StatusTypes;
+        for(var i = 0; i < statusTypes.length; i++) {%>
+            <option value="<%= statusTypes[i].id %>"><%= statusTypes[i].name %></option>
+        <%}
+    %>
+</select></label>
+<button class="right addNewDraver" name="addNewDraver" type="button">Добавить водителя</button>

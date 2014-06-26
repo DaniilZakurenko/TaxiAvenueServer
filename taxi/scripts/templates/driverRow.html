@@ -1,0 +1,58 @@
+<div class="mainDriverInfo group">
+    <span class="driverDetail">&nbsp;</span>
+    <span class="driverCallsign"><%= driver_callsign ? driver_callsign : '&nbsp;' %></span>
+    <span class="driverSurname"><%= driver_surname ? driver_surname : '&nbsp;' %></span>
+    <span class="driverName"><%= driver_name ? driver_name : '&nbsp;' %></span>
+    <span class="driverPatronymic"><%= driver_patronymic ? driver_patronymic : '&nbsp;' %></span>
+    <span class="carNumber"><%= car_number ? car_number : '&nbsp;' %></span>
+    <span class="carModel"><%= car_model ? car_model : '&nbsp;' %></span>
+    <span class="carColor"><%= car_color ? car_color : '&nbsp;' %></span>
+    <span class="carType"><%= General.getTypeById(car_type) %></span>
+    <span class="carNotes"><%= car_notes ? car_notes : '&nbsp;' %></span>
+</div>
+<div class="detailDriverInfo group">
+    <div>
+        <img src="<%= General.getUrl(driver_photo) %>" />
+        <button class="editDriver" type="button">Редактировать</button>
+        <button class="deleteDriver" type="button">Удалить</button>
+    </div>
+    <div>
+        <p class="taxi_status"><span class="nameOfField">Статус:</span>
+            <span class="valueOfField"><%= General.getStatusName(taxi_status) %></span>
+        </p>
+        <p class="driver_mobile_phone"><span class="nameOfField">Телефон:</span><span class="valueOfField"><%= driver_mobile_phone %></span></p>
+        <p class="driver_phone"><span class="nameOfField">Телефон 2:</span><span class="valueOfField"><%= driver_phone %></span></p>
+        <p class="driver_address"><span class="nameOfField">Адрес:</span><span class="valueOfField"><%= driver_address %></span></p>
+        <p class="driver_passport"><span class="nameOfField">Паспорт:</span><span class="valueOfField"><%= driver_passport %></span></p>
+        <p class="driver_dob"><span class="nameOfField">Дата рождения:</span><span class="valueOfField"><%= driver_dob %></span></p>
+        <p class="driver_admission_date"><span class="nameOfField">Дата приема:</span><span class="valueOfField"><%= driver_admission_date %></span></p>
+        <p class="driver_dismissal_date"><span class="nameOfField">Дата увольнения:</span><span class="valueOfField"><%= driver_dismissal_date %></span></p>
+        <p class="car_tariff_ind"><span class="nameOfField">Индивидуальный тариф:</span><span class="valueOfField"><%= car_tariff_ind %></span></p>
+        <p class="car_type"><span class="nameOfField">Тариф:</span><span class="valueOfField"><%= General.getTypeById(car_type) %></span></p>
+        <p class="car_self_carport"><span class="nameOfField">Свой автопарк:</span>
+            <span class="valueOfField <%= car_self_carport != 0 ? 'yes' : 'no' %>">&nbsp;</span>
+        </p>
+    </div>
+    <div>
+        <p class="driver_see_non_cash group"><span class="nameOfField">Видимость заказа по безналу:</span>
+            <span class="valueOfField <%= driver_see_non_cash != 0 ? 'yes' : 'no' %>">&nbsp;</span>
+        </p>
+        <p class="driver_only_non_cash group"><span class="nameOfField">Видит только безнал если долг:</span>
+            <span class="valueOfField <%= driver_only_non_cash != 0 ? 'yes' : 'no' %>">&nbsp;</span>
+        </p>
+        <p class="driver_passenger_phone group"><span class="nameOfField">Видит телефон пассажира:</span>
+            <span class="valueOfField <%= driver_passenger_phone != 0 ? 'yes' : 'no' %>">&nbsp;</span>
+        </p>
+        <p class="car_terminal group"><span class="nameOfField">Терминал:</span>
+            <span class="valueOfField <%= car_terminal != 0 ? 'yes' : 'no' %>">&nbsp;</span>
+        </p>
+        <p class="car_condition group"><span class="nameOfField">Кондиционер:</span>
+            <span class="valueOfField <%= car_condition != 0 ? 'yes' : 'no' %>">&nbsp;</span>
+        </p>
+        <p class="car_year"><span class="nameOfField">Год выпуска:</span><span class="valueOfField"><%= car_year %></span></p>
+        <p class="car_commission"><span class="nameOfField">Комиссия:</span><span class="valueOfField"><%= car_commission %></span></p>
+        <p class="car_commission_period_pay"><span class="nameOfField">Комиссия (период, грн):</span><span class="valueOfField"><%= car_commission_period_pay %></span></p>
+        <p class="car_fee"><span class="nameOfField">Абонплата:</span><span class="valueOfField"><%= car_fee %></span></p>
+        <p class="car_fee_period"><span class="nameOfField">Абонплата (период, грн):</span><span class="valueOfField"><%= car_fee_period %></span></p>
+    </div>
+</div>

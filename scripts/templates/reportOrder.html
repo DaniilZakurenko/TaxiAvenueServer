@@ -1,0 +1,161 @@
+<div class="controlPannel">
+    <div class="control buttons group">
+        <button class="settings" data-target="settings" type="button">Настройки</button>
+        <button class="filters" data-target="filters" type="button">Фильтры</button>
+        <button class="excel" data-target="excel" type="button">Сохранить в Excel</button>
+        <label class="countOfRecords group"><span>Количество строк в таблице: </span><input type="number" min="1" value="<%= countOfRecords %>" name="countOfRecords" /></label>
+    </div>
+    <div class="settings settingsReportOrders group hide">
+        <div class="left">
+            <label class="group"><input type="checkbox" name="orderId" /><span>№ заказа</span></label>
+            <label class="group"><input type="checkbox" name="status" /><span>Статус заказа</span></label>
+            <label class="group"><input type="checkbox" name="callsign" /><span>Позывной</span></label>
+            <label class="group"><input type="checkbox" name="firstPoint" /><span>Адрес подачи</span></label>
+            <label class="group"><input type="checkbox" name="lastPoint" /><span>Конечная точка</span></label>
+            <label class="group"><input type="checkbox" name="clientPhone" /><span>Телефон</span></label>
+            <label class="group"><input type="checkbox" name="cost" /><span>Стоимость</span></label>
+            <label class="group"><input type="checkbox" name="length" /><span>Длина</span></label>
+            <label class="group"><input type="checkbox" name="tarifId" /><span>Тип заказа</span></label>    
+        </div>
+        <div class="left">
+            <label class="group"><input type="checkbox" name="createDatetime" /><span>Время создания</span></label>
+            <label class="group"><input type="checkbox" name="arriveDatetime" /><span>Время подачи</span></label>
+            <label class="group"><input type="checkbox" name="finishDatetime" /><span>Время завершения</span></label>
+            <label class="group"><input type="checkbox" name="downTimes" /><span>Время простоев</span></label>
+            <label class="group"><input type="checkbox" name="downTimeCost" /><span>Стоимость простоев</span></label>
+            <label class="group"><input type="checkbox" name="taxiFrom" /><span>Такси откуда</span></label>
+            <label class="group"><input type="checkbox" name="taxiFromTitle" /><span>Такси откуда (назв.)</span></label>
+            <label class="group"><input type="checkbox" name="taxiTo" /><span>Такси куда</span></label>
+            <label class="group"><input type="checkbox" name="taxiToTitle" /><span>Такси куда (назв.)</span></label>
+        </div>
+        <div class="left">
+            <label class="group"><input type="checkbox" name="dispatcherId" /><span>№ диспетчера, создавшего заказ</span></label>
+            <label class="group"><input type="checkbox" name="dispatcherNote" /><span>Заметки д/диспетчера</span></label>   
+            <label class="group"><input type="checkbox" name="driverNote" /><span>Заметки д/водителя</span></label> 
+            <label class="group"><input type="checkbox" name="discount" /><span>Скидка, %</span></label>
+            <label class="group"><input type="checkbox" name="paymentType" /><span>Платеж</span></label>
+            <label class="group"><input type="checkbox" name="travelNumber" /><span>№ поездки (кол-во)</span></label>
+            <label class="group"><input type="checkbox" name="clientPaymentType" /><span>Клиент (скидочная карта или б/н)</span></label>
+            <label class="group"><input type="checkbox" name="additionalCard" /><span>Доп/карточка</span></label>
+            <label class="group"><input type="checkbox" name="statusTransfer" /><span>Статус перекидки</span></label>
+        </div>
+    </div>
+    
+    <div class="filters hide">
+        <div class="time group">
+            <h2>Фильтр по времени</h2>
+            <select name="selectTime">
+                <option selected="selected" value="createDatetime">Время создания заказа</option>
+                <option value="arriveDatetime">Время подачи машины</option>
+                <option value="finishDatetime">Время завершения заказа</option>
+            </select>
+            <div class="left">
+                <h3>От</h3>
+                <label><span>Дата:</span><input type="text" name="date_from" /></label>
+                <p><label for="hour_from">Часы:</label><input type="number" min="0" max="23" name="hour_from" value="0" /></p>
+                <p><label for="min_from">Мин:</label><input type="number" min="0" max="59" name="min_from" value="0" /></p>
+                <p><label for="sec_from">Сек:</label><input type="number" min="0" max="59" name="sec_from" value="0" /></p>
+            </div>
+            <div class="right">
+                <h3>До</h3>
+                <label><span>Дата:</span><input type="text" name="date_to" /></label>
+                <p><label for="hour_to">Часы:</label><input type="number" min="0" max="23" name="hour_to" value="0" /></p>
+                <p><label for="min_to">Мин:</label><input type="number" min="0" max="59" name="min_to" value="0" /></p>
+                <p><label for="sec_to">Сек:</label><input type="number" min="0" max="59" name="sec_to" value="0" /></p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="apply" type="button">Применить</button>
+            <button class="clear" type="button">Очистить</button>
+        </div>
+    </div>
+</div>
+<table>
+    <thead>
+        <tr class="sortRow" data-sort-dir="DESC">
+            <th class="detail"></th>
+            <th class="orderId"><span>№</span></th>
+            <th class="status"><span>Статус<br>заказа</span></th>
+            <th class="callsign" title="Позывной"><span>&nbsp;</span></th>
+            <th class="firstPoint"><span>Адрес<br>подачи</span></th>
+            <th class="lastPoint"><span>Конечная<br>точка</span></th>
+            <th class="clientPhone"><span>Телефон</span></th>
+            <th class="cost"><span>Стоим.,<br>грн</span></th>
+            <th class="length"><span>Длина,<br>км</span></th>
+            <th class="createDatetime"><span>Время<br>создания</span></th>
+            <th class="arriveDatetime"><span>Время<br>подачи</span></th>
+            <th class="finishDatetime"><span>Время<br>завершения</span></th>
+            <th class="tarifId"><span>Тип<br>заказа</span></th>
+            <th class="downTimes"><span>Время<br>простоев</span></th>
+            <th class="downTimeCost"><span>Стоимость<br>простоев</span></th>
+            <th class="driverNote"><span>Заметки<br>для<br>водителя</span></th>
+            <th class="dispatcherNote"><span>Заметки<br>для<br>диспетчера</span></th>
+            <th class="discount"><span>Скидка,<br>%</span></th>
+            <th class="paymentType"><span>Платеж</span></th>
+            <th class="travelNumber"><span>№<br>поездки<br>(кол.)</span></th>
+            <th class="taxiFrom"><span>Такси<br>откуда</span></th>
+            <th class="taxiFromTitle"><span>Такси<br>откуда<br>(назван.)</span></th>
+            <th class="taxiTo"><span>Такси<br>куда</span></th>
+            <th class="taxiToTitle"><span>Такси<br>куда<br>(назван.)</span></th>
+            <th class="statusTransfer"><span>Статус<br>перекидки</span></th>
+            <th class="dispatcherId"><span>№<br>диспетчера,<br>создавшего<br>заказ</span></th>
+            <th class="clientPaymentType"><span>Клиент<br>(ск/карта или б/н)</span></th>
+            <th class="additionalCard"><span>Доп/карточка</span></th>
+        </tr>
+        <tr>
+            <th class="detail"></th>
+            <th class="orderId"></th>
+            <th class="status">
+                <select name="filterByStatus">
+                    <option></option>
+                    <%
+                        for(var i = 0; i < StatusTypes.length; i++) {%>
+                            <option value="<%= StatusTypes[i].id %>"><%= StatusTypes[i].name %></option>
+                        <%}
+                    %>
+                </select>
+            </th>
+            <th class="callsign"><input type="text" name="filterByCallsign" /></th>
+            <th class="firstPoint"><input type="text" name="filterByFirstPoint" /></th>
+            <th class="lastPoint"><input type="text" name="filterByLastPoint" /></th>
+            <th class="clientPhone"><input type="text" name="filterByСlientPhone" /></th>
+            <th class="cost"><input type="text" name="filterByСost" /></th>
+            <th class="length"><input type="text" name="filterByLength" /></th>
+            <th class="arriveDatetime"></th>
+            <th class="createDatetime"></th>
+            <th class="finishDatetime"></th>
+            <th class="tarifId">
+                <select name="filterByTarif">
+                    <option></option>
+                    <%
+                        for(var i = 0; i < CarTypes.length; i++) {%>
+                            <option value="<%= CarTypes[i].id %>"><%= CarTypes[i].type %></option>
+                        <%}
+                    %>
+                </select>
+            </th>
+            <th class="downTimes"></th>
+            <th class="downTimeCost"></th>
+            <th class="driverNote"><input type="text" name="filterByDriverNote" /></th>
+            <th class="dispatcherNote"><input type="text" name="filterByDispatcherNote" /></th>
+            <th class="discount"></th>
+            <th class="paymentType"></th>
+            <th class="travelNumber"></th>
+            <th class="taxiFrom"></th>
+            <th class="taxiFromTitle"></th>
+            <th class="taxiTo"></th>
+            <th class="taxiToTitle"></th>
+            <th class="statusTransfer"></th>
+            <th class="dispatcherId"><input type="text" name="filterByDispatcherId" /></th>
+            <th class="clientPaymentType">
+                <select name="filterByPayment">
+                    <option></option>
+                    <option value="cash_payment_tarif">Скидочная карта</option>
+                    <option value="non_cash_payment_tarif">Безнал</option>
+                </select>
+            </th>
+            <th class="additionalCard"></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>

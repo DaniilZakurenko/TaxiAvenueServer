@@ -1,0 +1,244 @@
+﻿/* 
+    Document   : orderReport styles for screen media
+    Created on : 26/04/2013
+*/
+
+div.orderReport {
+    /*width: 1350px;*/
+    padding: 10px 10px 30px 10px;
+    color: #000;
+    overflow: auto;
+    font-size: 0.9em;
+    position: relative;
+}
+
+div.orderReport button {
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin-right: 20px;
+    padding: 3px 8px;
+}
+
+
+div.orderReport div.controlPannel { }
+
+div.orderReport div.controlPannel div.buttons {
+    margin-bottom: 10px;
+}
+div.orderReport div.controlPannel div.buttons button {
+    font-size: 1.1em;
+}
+div.orderReport div.controlPannel div.buttons button.excel {
+    float: right;
+    margin-right: 0;
+}
+div.orderReport div.controlPannel div.buttons label.countOfRecords {
+    display: block;
+    width: 260px;
+    float: right;
+    margin: 2px 30px 0 0;
+    padding-top: 5px;
+    font-size: 1.1em;
+}
+div.orderReport div.controlPannel div.buttons label.countOfRecords input {
+    width: 40px;
+}
+
+div.orderReport div.controlPannel div.settings,
+div.orderReport div.controlPannel div.filters,
+div.orderReport div.controlPannel div.search {
+    border: 1px solid #999;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0;
+}
+
+
+div.orderReport div.controlPannel div.filters {
+    padding: 15px 5px 5px 10px;
+}
+div.orderReport div.controlPannel div.filters h2 {
+    width: 32%;
+    font-weight: bold;
+    margin-top: -12px;
+    margin-left: 25%;
+    padding: 0 5px 5px;
+    background-color: #fff;
+}
+div.orderReport div.controlPannel div.filters h3 {
+    padding: 5px 0 12px;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+div.orderReport div.controlPannel div.filters div.time {
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+}
+div.orderReport div.controlPannel div.filters div.time div {
+    width: 49%;
+}
+div.orderReport div.controlPannel div.filters div.time select {
+    width: 40%;
+    display: block;
+    margin: 10px 0 10px 20%;
+}
+div.orderReport div.controlPannel div.filters div.time div.left {
+    border-right: 1px solid #aaa;
+    padding-right: 2%;
+    width: 48%;
+}
+div.orderReport div.controlPannel div.filters div.time label {
+    width: 99%;
+    display: block;
+}
+div.orderReport div.controlPannel div.filters div.time label span {
+    width: 28%;
+    padding-right: 3%;
+    text-align: right;
+    display: inline-block;
+}
+div.orderReport div.controlPannel div.filters div.time label input {
+    width: 64%;
+    display: inline-block;
+}
+
+div.orderReport div.controlPannel div.filters div.time p {
+    width: 30%;
+    padding: 10px 2px 5px;
+    display: inline-block;
+}
+div.orderReport div.controlPannel div.filters div.time p label {
+    width: 45%;
+    margin-right: 3%;
+    text-align: right;
+    display: inline-block;
+}
+div.orderReport div.controlPannel div.filters div.time p label:last-child {
+    margin-right: 0;
+}
+div.orderReport div.controlPannel div.filters div.time p input {
+    width: 45%;
+    display: inline-block;
+}
+div.orderReport div.controlPannel div.filters div.buttons {
+    margin: 10px 0 5px;
+    overflow: hidden;
+}
+
+
+div.orderReport table { 
+    margin-top: 10px;
+}
+
+div.orderReport table thead th, div.orderReport table tbody td {
+    border: 1px solid #666;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 2px;
+}
+div.orderReport table thead th {
+    padding: 8px 3px;
+    text-align: center;
+}
+div.orderReport table thead th span {
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+}
+div.orderReport table thead th input {
+    width: 95%;
+    display: block;
+    font-size: 0.9em;
+}
+div.orderReport table thead th select {
+    width: 99%;
+    height: 20px;
+    font-size: 0.9em;
+}
+div.orderReport table thead th.callsign input {
+    width: 90%;
+}
+
+div.orderReport table tbody td {
+    padding: 3px;
+    font-size: 0.9em;
+}
+
+div.orderReport table tbody tr.selectedRow {
+    background-color: #ddd;
+}
+
+div.orderReport table tbody td.detail {
+    cursor: pointer;
+    transition: all 0.3s;
+    background: url(../images/view.png) center center no-repeat;
+}
+
+div.orderReport table th.detail,
+div.orderReport table td.detail {
+    width: 2.5%;
+}
+div.orderReport table th.orderId,
+div.orderReport table td.orderId {
+    width: 3.5%;
+}
+div.orderReport table th.status,
+div.orderReport table td.status {
+    width: 10%;
+}
+div.orderReport table tr.sortRow th.callsign {
+    background: url(../images/flag_green.png) center center no-repeat;
+}
+div.orderReport table th.callsign,
+div.orderReport table td.callsign {
+    width: 3.5%;
+}
+div.orderReport table th.firstPoint,
+div.orderReport table td.firstPoint,
+div.orderReport table th.lastPoint,
+div.orderReport table td.lastPoint {
+    width: 10%;
+}
+div.orderReport table th.cost,
+div.orderReport table td.cost,
+div.orderReport table th.length,
+div.orderReport table td.length  {
+    width: 4%;
+}
+div.orderReport table th.arriveDatetime,
+div.orderReport table td.arriveDatetime,
+div.orderReport table th.createDatetime,
+div.orderReport table td.createDatetime  {
+    width: 10%;
+}
+div.orderReport table th.tarifId,
+div.orderReport table td.tarifId,
+div.orderReport table th.downTimes,
+div.orderReport table td.downTimes,
+div.orderReport table th.downTimeCost,
+div.orderReport table td.downTimeCost,
+div.orderReport table th.clientPaymentType,
+div.orderReport table td.clientPaymentType {
+    width: 8%;
+}
+div.orderReport table th.driverNote,
+div.orderReport table td.driverNote,
+div.orderReport table th.dispatcherNote,
+div.orderReport table td.dispatcherNote  {
+    width: 20%;
+}
+div.orderReport table th.discount,
+div.orderReport table td.discount,
+div.orderReport table th.paymentType,
+div.orderReport table td.paymentType,
+div.orderReport table th.travelNumber,
+div.orderReport table td.travelNumber {
+    width: 5%;
+}
+

@@ -1,0 +1,62 @@
+<fieldset class="reason">
+    <legend>Причина</legend>
+    <div class="row executed group">
+        <div class="left">
+            <label class="reason group"><input type="radio" name="reason" value="1" checked="checked" /><span>Выполнен</span></label>
+        </div>
+        <div class="right">
+            <p>
+                <label class="callsign"><span>Позывной:</span><input type="text" name="callsign" value="<%= callsign %>" /></label>        
+                <label class="date_executed"><span>Дата:</span><input type="text" name="date_executed" /></label>
+            </p>
+            <p>
+                <label class="hour_executed"><span>Часы:</span><input type="number" min="0" max="23" name="hour_executed" value="0" /></label>
+                <label class="min_executed"><span>Мин:</span><input type="number" min="0" max="59" name="min_executed" value="0" /></label>
+                <label class="sec_executed"><span>Сек:</span><input type="number" min="0" max="59" name="sec_executed" value="0" /></label>
+            </p>
+            <p>
+                <label class="downTimes"><span>Время простоя (мин.):</span><input type="number" min="0" name="downTimes" value="<%= downTimes %>" /></label>
+            </p>
+        </div>
+    </div>
+    <div class="row failureClient group">
+        <div class="left">
+            <label class="reason group"><input type="radio" name="reason" value="2" /><span>Отказ клиента</span></label>
+        </div>
+        <div class="right">
+            <p><label><input type="checkbox" name="customerRejectionReason[tariff]" /><span>Не устраивает тариф</span></label></p>
+            <p><label><input type="checkbox" name="customerRejectionReason[submissionTime]" /><span>Не устраивает время подачи</span></label></p>
+            <p><label><input type="checkbox" name="customerRejectionReason[service]" /><span>Не устраивает сервис</span></label></p>
+        </div>
+    </div>
+    <div class="row failureDriver group">
+        <div class="left">
+            <label class="reason group"><input type="radio" name="reason" value="3" /><span>Отказ водителя</span></label>
+        </div>
+        <div class="right">
+            <label>
+                <span>Причина отказа:</span>
+                <textarea rows="2" name="driverRejectionReason"></textarea>
+            </label>
+        </div>
+    </div>
+</fieldset>
+<fieldset class="additional">
+    <legend>Дополнительно</legend>
+    <div class="left">
+        <label class="toBlackList"><input type="checkbox" name="toBlackList" /><span>Занести пассажира в черный список</span></label>
+        <label class="status"><span>Статус заказа:</span>
+            <select name="status">
+                <% _.each(StatusTypes, function(StatusType, idx){ %>
+                <option value="<%= StatusType.id %>" <% if(StatusType.id == status) { %>selected="selected"<% } %> >
+                    <%= StatusType.name %>
+                </option>
+                <% }); %>
+            </select>
+        </label>
+    </div>
+    <div class="right">
+        <label><span>Прочее:</span><textarea rows="2" name="others"></textarea></label>
+    </div>
+</fieldset>
+<input type="hidden" name="orderId" value="<%= id %>" />

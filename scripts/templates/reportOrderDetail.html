@@ -1,0 +1,91 @@
+<div class="left map"></div>
+<div class="right">
+    <label class="group"><span>№ заказа</span><input type="text" disabled="disabled" name="orderId" value="<%= id %>" /></label>
+    <label class="group"><span>Позывной</span><input type="text" disabled="disabled" value="<%= callsign %>" name="callsign" /></label>
+    <label class="group"><span>Статус заказа</span>
+        <select disabled="disabled" name="status">
+            <% _.each(StatusTypes, function(StatusType, idx){ %>
+            <option value="<%= StatusType.id %>" <% if(StatusType.id == status) { %>selected="selected"<% } %> >
+                <%= StatusType.name %>
+            </option>
+            <% }); %>
+        </select>
+    </label>
+    <label class="group"><span>Адрес</span><input type="text" disabled="disabled" value="<%= address %>" name="addr" /></label>
+    <label class="group"><span>Подъезд</span><input type="text" disabled="disabled" value="<%= porch %>" name="porch" /></label>
+    <label class="group"><span>Квартира</span><input type="text" disabled="disabled" value="<%= apartment %>" name="apartment" /></label>
+    <label class="group"><span>Стоимость</span><input type="text" disabled="disabled" value="<%= cost %>" name="cost" /></label>
+    <label class="group"><span>Длина</span><input type="text" disabled="disabled" value="<%= routeLength %>" name="length" /></label>
+    <label class="group"><span>Время создания</span><input type="text" disabled="disabled" value="<%= createDatetime %>" name="createDatetime" /></label>
+    <label class="group"><span>Время подачи</span><input type="text" disabled="disabled" value="<%= arriveDatetime %>" name="arriveDatetime" /></label>
+    <label class="group"><span>Время закрытия</span><input type="text" disabled="disabled" value="<%= finishDatetime %>" name="finishDatetime" /></label>
+    <label class="group"><span>Продолжительность, мин.</span><input type="text" disabled="disabled" value="" name="" /></label>
+    <label class="group"><span>Тип заказа</span>
+        <select disabled="disabled" name="tarif">
+            <% _.each(CarTypes, function(CarType, idx){ %>
+            <option value="<%= CarType.id %>" <% if(CarType.id == tarif_id) { %>selected="selected"<% } %> >
+                <%= CarType.type %>
+            </option>
+            <% }); %>
+        </select>
+    </label>
+    <label class="group"><span>Время простоев</span><input type="text" disabled="disabled" value="" name="downTimes" /></label>
+    <label class="group"><span>Стоимость простоев</span><input type="text" disabled="disabled" value="" name="downTimeCost" /></label>
+    <label class="group"><span>Скидка, %</span><input type="text" disabled="disabled" value="" name="discount" /></label>
+    <label class="group"><span>Платеж</span><input type="text" disabled="disabled" value="" name="paymentType" /></label>
+    <label class="group"><span>№ поездки (кол-во)</span><input type="text" disabled="disabled" value="" name="travelNumber" /></label>
+    <label class="group"><span>Такси откуда</span><input type="text" disabled="disabled" value="" name="taxiFrom" /></label>
+    <label class="group"><span>Такси откуда (назв.)</span><input type="text" disabled="disabled" value="" name="taxiFromTitle" /></label>
+    <label class="group"><span>Такси куда</span><input type="text" disabled="disabled" value="" name="taxiTo" /></label>
+    <label class="group"><span>Такси куда (назв.)</span><input type="text" disabled="disabled" value="" name="taxiToTitle" /></label>
+    <label class="group"><span>Статус перекидки</span><input type="text" disabled="disabled" value="" name="statusTransfer" /></label>
+    <label class="group"><span>Фамилия водителя</span><input type="text" disabled="disabled" value="" name="driverSurname" /></label>
+    <label class="group"><span>Информация по машине</span><input type="text" disabled="disabled" value="" name="" /></label>
+    <label class="group"><span>№ диспетчера, создавшего заказ</span><input type="text" disabled="disabled" value="" name="dispatcherId" /></label>
+    <label class="group"><span>№ диспетчера, поставившего заказ</span><input type="text" disabled="disabled" value="" name="" /></label>
+    <label class="group"><span>№ диспетчера, запустившего заказ</span><input type="text" disabled="disabled" value="" name="" /></label>
+    <label class="group"><span>№ диспетчера, закрывшего заказ</span><input type="text" disabled="disabled" value="" name="" /></label>
+    <label class="group"><span>В эфире, диспетчер</span><input type="text" disabled="disabled" value="" name="" /></label>
+    <fieldset class="dispatcher_note">
+        <legend>Заметки для диспетчера</legend>
+        <textarea rows="2" disabled="disabled" name="dispatcherNote"><%= dispatcher_note %></textarea>
+    </fieldset>
+</div>
+<div class="left">
+    <fieldset class="route">
+        <legend>Маршрут</legend>
+        <div class="control">
+            <button disabled="disabled" class="plusWay" type="button">Добавить точку к маршруту</button>
+        </div>
+
+        <% _.each(route.get("points"), function(point, idx){ %>
+        <div class="point group" data-idx="<%= idx %>" data-point-cid="<%= point.cid %>">
+            <label class="street group"><span><%= (idx == 0) ? "Откуда" : "Куда" %></span>
+                <input disabled="disabled" type="text" name="point[<%= idx %>][S]" value="<%= point.get('street') %>" />
+            </label>
+            <label class="house group"><span>Дом</span>
+                <input disabled="disabled" type="text" name="point[<%= idx %>][N]" value="<%= point.get('number') %>" />
+            </label>
+            <button disabled="disabled" title="Удалить точку" class="minusWay <% if(idx == 0) { %> hide <% } %>" type="button">&nbsp;</button> 
+        </div>
+        <% }); %>
+
+        <div class="dir">
+            <label class="oneWay group"><input disabled="disabled" type="radio" name="dir" value="oneWay" checked /><span>В одну сторону</span></label>
+            <label class="tnb group"><input disabled="disabled" type="radio" name="dir" value="tnb" /><span>В две стороны</span></label>
+        </div>
+    </fieldset>
+
+    <fieldset class="clientInfo">
+        <legend>Информация о клиенте:</legend>
+        <label class="group"><span>Имя клиента</span><input type="text" disabled="disabled" value="<%= customerName %>" name="customerName" /></label>
+        <label class="group"><span>Телефон клиента</span><input type="text" disabled="disabled" value="<%= customerPhone %>" name="customerPhone" /></label>
+        <label class="group"><span>Скидочная карта или б/н</span><input type="text" disabled="disabled" value="" name="clientPaymentType" /></label>
+        <label class="group"><span>Доп/карточка</span><input type="text" disabled="disabled" value="" name="additionalCard" /></label>
+    </fieldset>
+    <fieldset class="driver_note">
+        <legend>Заметки для водителя</legend>
+        <textarea rows="2" disabled="disabled" name="driverNote"><%= driver_note %></textarea>
+    </fieldset>
+</div>
+

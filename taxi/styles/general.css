@@ -1,0 +1,291 @@
+/* 
+    Document   : general styles for screen media
+    Created on : 26/03/2013
+    Author     : 
+    Description: 
+*/
+@import url("reset.css");
+@import url("ie.css");
+
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    color: #222;
+    background-color: #eaeae8;
+}
+
+body {
+    font-family: Calibri, Verdana, Ariel, sans-serif;
+}
+
+/* misc */
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+hr, .hide {
+    display: none;
+}
+a img {
+    border: none;
+}
+img, object {
+    width: 100%;
+}
+
+/* self-clear floats */
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* links */
+a:link, a:visited {
+    color: #369;
+    outline: none;
+}
+a:hover {
+    color: #39c;
+}
+
+/***** page structure *****/
+
+#application div.menu_icons, 
+#application div.information_block {
+    width: 126em;
+    margin: 0 auto;
+    border-right: 1px solid #989390;
+    border-left: 1px solid #989390;
+}
+#application div.information_block {
+    position: relative;
+    overflow: hidden;
+}
+
+/***** .menu_icons *****/
+
+#application div.menu_icons {
+    height: 90px;
+    border-bottom: 1px solid #989390;
+    background: #eaeae8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eaeae8 0%, #dbd5d2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeae8), color-stop(100%,#dbd5d2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* IE10+ */
+}
+#application div.menu_icons > div {
+    height: 100%;
+    padding: 0 7px;
+    display: inline-block;
+    border-right: 1px solid #BFBBB8;
+}
+#application div.menu_icons > div:last-child {
+    border-right: none;
+}
+#application div.menu_icons > div ul li {
+    height: 60px;
+    display: inline-block;
+    /*overflow: visible;*/
+    cursor: pointer;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+#application div.menu_icons > div ul li:hover,
+#application div.menu_icons > div ul li.menu_disable,
+#application div.information_block > div ul li.menu_disable {
+    opacity: 0.5;
+}
+#application div.menu_icons > div ul li.menu_disable,
+#application div.information_block > div ul li.menu_disable {
+    cursor: default;
+}
+#application div.information_block > div ul li.menu_disable:hover {
+    text-decoration: none;
+}
+#application div.menu_icons > div p {
+    padding-top: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2f2f2f;
+}
+
+/***** .information_block *****/
+
+#application div.information_block div.menu_bottom {
+    line-height: 15px;
+    border-bottom: 1px solid #989390;
+    background: #eaeae8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eaeae8 0%, #dbd5d2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeae8), color-stop(100%,#dbd5d2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* IE10+ */
+}
+#application div.information_block .menu_bottom ul {
+    padding: 20px 0 0 20px;
+    font-size: 1.2em;
+}
+#application div.information_block .menu_bottom ul li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0 5px;
+    font-size: 1.6em;
+    cursor: pointer;
+    color: #2e267c;
+}
+#application div.information_block .menu_bottom ul li:hover {
+    text-decoration: underline;
+}
+#application div.information_block .menu_bottom ul li span {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-image: url('../images/icons_sprite.png');
+    float: left;
+    margin-right: 5px;
+}
+#application div.information_block .menu_bottom ul li.edit span {background-position: -20px 0;}
+#application div.information_block .menu_bottom ul li.perform span {background-position: -39px 0;}
+#application div.information_block .menu_bottom ul li.return span {background-position: -56px 0;}
+#application div.information_block .menu_bottom ul li.delete span {background-position: -75px 0;}
+#application div.information_block .menu_bottom ul li.map span {
+    width: 17px;
+    height: 17px;
+    background: url('../images/globe.png') 0 0 no-repeat;
+}
+
+
+#application div.information_block .tabs_section {
+    border-bottom: 1px solid #989390;
+}
+#application div.information_block .tabs_section .nav_block {
+    padding: 10px 0 0 20px;
+    border-right: 1px solid #989390;
+    background: #eaeae8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eaeae8 0%, #dbd5d2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeae8), color-stop(100%,#dbd5d2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #eaeae8 0%,#dbd5d2 100%); /* IE10+ */
+}
+#application div.information_block .tabs_section .nav_block ul.tabs {
+    overflow: hidden;
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li {
+    font-size: 1.4em;
+    display: inline-block;
+    border: 1px solid #9E9A97;
+    border-bottom: none;
+    border-radius: 5px;
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    background-color: #D5D2CD;
+    padding: 7px 10px 8px 40px;
+    background-position: 10px 3px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li.ui-state-active a {
+    color: #fff;
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li.file a {
+    background-image: url('../images/file.png');
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li.clock a {
+    background-image: url('../images/clock.png');
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li.galochka a {
+    background-image: url('../images/galochka.png');
+}
+#application div.information_block .tabs_section .nav_block ul.tabs li:hover a {
+    color:#fff;
+}
+#application div.information_block .tabs_section .tab {
+    border:1px solid #9E9A97;
+    min-height: 680px;
+    /*overflow: visible;*/
+    background-color: #D5D2CD;
+}
+#application div.information_block .tabs_section .tab h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+body > div.ui-dialog {
+    font-size: 1.3em;
+    /*padding: 10px;*/
+}
+div.ui-dialog-titlebar {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#clientMapWrap {
+    /*display: none;*/
+    width: 500px;
+    height: 700px;
+    position: absolute;
+    right: -535px;
+    top: 7%;
+    transition: all 0.8s;
+}
+#clientMapWrap.show {
+    right: 0;
+}
+#clientMapWrap img.hideMap {
+    width: 17px;
+    padding: 3px;
+    border: 2px solid rgba(250, 250, 250, 0.8);
+    background-color: rgba(250, 250, 250, 0.8);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+#clientMapWrap img.hideMap:hover {
+    border: 2px solid rgba(250, 250, 250, 0.5);
+    background-color: rgba(250, 250, 250, 0.5);
+}
+#clientMap {
+    width: -502px;
+    min-height: 600px;
+    border-top-left-radius: 15px;
+}
+
+body div.ui-datepicker {
+    font-size: 1.2em;
+}
+
+div#mapExample {
+    display: none;
+    width: 99%;
+    height: 99%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid red;
+}
+
+div#loader {
+    position: absolute;
+}
+
+

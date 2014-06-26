@@ -1,0 +1,9 @@
+#!/bin/sh
+PHPRC="/hsphere/shared/apache/conf/php53/php.ini"
+export PHPRC
+PHP_FCGI_CHILDREN=0
+export PHP_FCGI_CHILDREN
+PHP_FCGI_MAX_REQUESTS=50
+export PHP_FCGI_MAX_REQUESTS
+exec /hsphere/shared/php53/bin/php-cgi
+

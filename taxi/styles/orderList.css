@@ -1,0 +1,89 @@
+﻿/* 
+    Document   : orderList styles for screen media
+    Created on : 26/03/2013
+*/
+
+table.orderList {
+    width: 100%;
+    font-size: 1em;
+    table-layout: fixed;
+}
+table.orderList thead th, table.orderList tbody td {
+    border: 1px solid #666;
+    vertical-align: middle;
+    text-align: center;
+}
+table.orderList thead th {
+    padding: 5px 3px;
+    font-weight: bold;
+    font-size: 1.1em;
+    /*font-size: 1.1em;*/
+}
+table.orderList tbody td {
+    padding: 3px 2px;
+    overflow: hidden;
+    /*overflow-x: auto;*/
+    /*font-size: 0.9em;*/
+}
+table.orderList tbody td.default {
+    /*background-color: #d5d2cd;*/
+}
+table.orderList tbody td.paleYellow {
+    background-color: rgb(255, 255, 150);
+}
+table.orderList tbody td.paleBrown {
+    background-color: #f49d51;
+}
+
+table.orderList thead th.actions,
+table.orderList tbody td.actions {
+    width: 75px;
+/*    padding-left: 4px;
+    white-space: nowrap;*/
+}
+table.orderList thead th.callsign,
+table.orderList tbody td.callsign {
+    width: 35px;
+}
+table.orderList tbody td.clientName {
+    /*width: 20%;*/
+}
+table.orderList tbody td.clientPhone {
+    /*width: 10%;*/
+}
+table.orderList tbody td.route {
+    /*width: 30%;*/
+}
+table.orderList tbody td.cost {
+    /*width: 8%;*/
+}
+table.orderList tbody td.status {
+    /*width: 10%;*/
+}
+table.orderList tbody td.actions img {
+    width: 16px;
+    float: left;
+    display: block;
+    /*padding: 0 1px;*/
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+table.orderList tbody td.actions img:hover {
+    border: 1px solid rgba(250, 250, 250, 0.8);
+    background-color: rgba(250, 250, 250, 0.8);
+}
+table.orderList tbody td.actions img:last-child {
+    margin-right: 0;
+}
+table.orderList tr {
+    cursor: pointer;
+}
+table.orderList tbody tr:hover {
+    background-color: #ddd;
+}
+table.orderList tr.selectedRow, 
+table.orderList tr.selectedRow:hover {
+    background-color: #eee;
+}

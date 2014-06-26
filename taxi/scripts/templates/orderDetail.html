@@ -1,0 +1,103 @@
+<input type="hidden" name="orderId" value="<%= id %>" />
+<div class="left">
+    <fieldset class="phone group">
+        <div class="left">
+            <label><span>Телефон 1: </span><input type="text" name="customerPhone" value="<%= customerPhone %>" /></label>
+            <label><span>Телефон 2: </span><input type="text" name="customerPhone2" value="<%= customerPhone2 %>" /></label>
+        </div>
+        <div class="right"></div>
+    </fieldset>
+    <fieldset class="route">
+        <legend>Маршрут</legend>
+        <div class="control">
+            <button class="plusWay" type="button">Добавить точку к маршруту</button>
+        </div>
+        
+        <% _.each(route.get("points"), function(point, idx){ %>
+        <div class="point group">
+            <label class="street group"><span><%= (idx == 0) ? "Откуда: " : "Куда: " %></span>
+                <input type="text" name="point[<%= idx %>][S]" value="<%= point.get('street') %>" />
+            </label>
+            <label class="house group"><span>Дом: </span><input type="text" name="point[<%= idx %>][N]" value="<%= point.get('number') %>" /></label>
+            <button title="Удалить точку" class="minusWay <% if(idx == 0) { %> hide <% } %>" type="button">&nbsp;</button> 
+        </div>
+        <% }); %>
+
+        <div class="dir">
+            <label class="oneWay"><input type="radio" name="dir" value="oneWay" checked />В одну сторону</label>
+            <label class="tnb"><input type="radio" name="dir" value="tnb" />В две стороны</label>
+        </div>
+    </fieldset>
+    <fieldset class="forcedOrder">
+        <label><input type="checkbox" disabled="disabled" name="forcedOrder"><span>Принудительный заказ</span></label>
+        <div class="callsigns"><span class="title">Позывные: </span><p></p></div>
+        <label class="callsign"><span>Позывной: </span><input type="text" name="callsign" value="<%= callsign %>" /></label>
+    </fieldset>
+    <fieldset class="costInfo group">
+        <legend>Расчет стоимости</legend>
+        <div class="left">
+            <p class="createDatetime">Время создания:<span><%= createDatetime %></span></p>
+            <p class="routeLength">Длина маршрута:<span><%= routeLength %></span></p>
+        </div>
+        <div class="right">
+            <p class="arriveDatetime">Время подачи:<span><%= arriveDatetime %></span></p>
+            <p class="routeCost">Стоимость:<span><%= cost %></span></p>                  
+        </div>
+    </fieldset>
+</div>
+<div class="right">
+    <fieldset class="reserv">
+        <label class="reservation"><input type="checkbox" disabled="disabled" name="reservation" <%= (reservation != '0') ? 'checked="checked"' : '' %> />Предварительный заказ</label>
+        <label class="reservDate"><span>Дата: </span><input disabled="disabled" type="text" name="reservDate" value="<%= reservDate %>" /></label>
+        <label class="reservTime"><span>Время: </span><input disabled="disabled" type="time" name="reservTime" value="<%= reservTime %>" /></label>
+    </fieldset>
+    <fieldset class="fluidTariffing">
+        <legend>Гибкий тариф</legend>
+        <select name="tarif">
+            
+            <% _.each(carTypes, function(carType, idx){ %>
+            <option value="<%= carType.id %>" <% if(carType.id == tarif_id) { %>selected="selected"<% } %> >
+                <%= carType.type %>
+            </option>
+            <% }); %>
+            
+        </select>
+        <button name="showTarif" type="button">Показать</button>
+    </fieldset>
+    <fieldset class="unkonwn2">
+        <label class="regCustomer"><input type="checkbox" name="regularCustomer" <%= (regularCustomer != '0') ? 'checked="checked"' : '' %> />Постоянный клиент</label>
+        <label class="nonCashPayment"><input type="checkbox" name="nonCashPayment" <%= (payment != defaults.payment) ? 'checked="checked"' : '' %> />Безналичный расчёт</label>
+        <input type="text">
+        <div class="row group">
+            <label class="extracard left"><span>Доп. карточка</span><input type="text" name="extracard" value="<%= extracard %>" /></label>
+            <label class="voucher right"><span>Ваучер</span><input type="text" name="voucher" value="<%= voucher %>" /></label>
+        </div>
+    </fieldset>
+    <fieldset class="payment_options group">
+        <div class="col left">
+            <label class="salonLoading"><input name="addService[salonLoading]" type="checkbox" <%= (salonLoading != '0') ? 'checked="checked"' : '' %> /><span>Загрузка салона</span></label>
+            <label class="animal"><input name="addService[animal]" type="checkbox" <%= (animal != '0') ? 'checked="checked"' : '' %> /><span>Животное</span></label>
+            <label class="city"><input name="city" type="checkbox" <%= (city != '0') ? 'checked="checked"' : '' %> /><span>По городу</span></label>
+            <label class="airCondition"><input name="addService[airCondition]" type="checkbox" <%= (airCondition != '0') ? 'checked="checked"' : '' %> /><span>Кондиционер</span></label>
+            <label class="courierDelivery"><input name="addService[courierDelivery]" type="checkbox" <%= (courierDelivery != '0') ? 'checked="checked"' : '' %> /><span>Курьер. доставка</span></label>
+            <label class="terminal"><input name="terminal" type="checkbox" <%= (terminal != '0') ? 'checked="checked"' : '' %> /><span>Терминал</span></label>
+        </div>
+        <div class="col right">
+            <label class="nameSign"><input name="addService[namesign]" type="checkbox" <%= (namesign != '0') ? 'checked="checked"' : '' %> /><span>Встреча с табличкой</span></label>
+            <label class="hour"><input name="hour" type="checkbox" <%= (hour != '0') ? 'checked="checked"' : '' %> /><span>&laquo;Почасовка&raquo;</span></label>
+            <label class="grach"><input name="grach" type="checkbox" <%= (grach != '0') ? 'checked="checked"' : '' %> /><span>Пасс. с руки</span></label>
+            <label class="ticket"><input name="ticket" type="checkbox" <%= (ticket != '0') ? 'checked="checked"' : '' %> /><span>Чек</span></label>
+            <label class="gprsNotes"><span>Заметки для GPRS:</span><input name="gprsNotes" type="text" value="<%= gprsNotes %>" /></label>
+        </div>
+    </fieldset>
+    <fieldset class="description">
+        <label class="addr"><span>Адрес:</span><input type="text" name="addr" value="<%= address %>" /></label>
+        <div class="row group">
+            <label class="apartment"><span>Квартира:</span><input type="text" name="apartment" value="<%= apartment %>" /></label>
+            <label class="porch"><span>Подъезд:</span><input type="text" name="porch" value="<%= porch %>" /></label>
+            <label class="clientName"><span>Имя клиента:</span><input type="text" name="customerName" value="<%= customerName %>" /></label>
+        </div>
+        <label class="driverNote"><span>Заметки для водителя:</span><textarea name="driverNote" rows="2"><%= driver_note %></textarea></label>
+        <label class="dispatcherNote"><span>Заметки для диспетчера:</span><textarea name="dispatcherNote" rows="2"><%= dispatcher_note %></textarea></label>
+    </fieldset>
+</div>

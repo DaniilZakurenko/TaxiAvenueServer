@@ -1,0 +1,248 @@
+/* 
+    Created on : 02.04.2014, 9:46:06
+    Author     : Admin
+*/
+
+form.driverDetail {
+    width: 817px;
+    /*height: 590px;*/
+    /*padding-top: 20px;*/
+}
+form.driverDetail div.warning {
+    margin: 10px 0 5px;
+    text-align: center;
+    font-size: 1.2em;
+}
+form.driverDetail div.error {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+    color: red;
+    border: 1px solid red;
+    display: none;
+}
+form.driverDetail span.required:after {
+    display: inline;
+    padding: 0;
+    content: "*";
+    color: red;
+}
+form.driverDetail div.left,
+form.driverDetail div.right {
+    width: 48%;
+    height: 100%;
+}
+form.driverDetail div.row {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+form.driverDetail div.row:last-child {
+    border: none;
+}
+form.driverDetail label {
+    display: block;
+    padding: 5px 0;
+}
+form.driverDetail label span {
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+    margin-right: 2%;
+}
+form.driverDetail label input,
+form.driverDetail label select {
+    display: inline-block;
+    width: 60%;
+}
+form.driverDetail label select {
+    width: 61%;
+    height: 23px;
+}
+form.driverDetail div.row div.col.fullName {
+    width: 68%;
+    float: left;
+}
+form.driverDetail div.row div.col.fullName label {
+    padding: 0 0 10px;
+}
+form.driverDetail div.row div.col.fullName label:last-child {
+    padding-bottom: 0;
+}
+form.driverDetail div.row div.col.fullName label:last-child span {
+    margin-right: 1%;
+}
+form.driverDetail div.row div.col.photo {
+    width: 27%;
+    float: right;
+}
+form.driverDetail div.row div.col.photo img {
+    width: 98%;
+    margin-left: 1%;
+}
+form.driverDetail div.row div.col.photo button {
+    display: block;
+    width: 100%;
+    padding: 3px 0;
+}
+form.driverDetail div.row.personalInfo label:last-child {
+    padding-bottom: 0;
+}
+form.driverDetail div.row.personalInfo label span {
+    width: 42%;
+}
+form.driverDetail div.row.personalInfo input {
+    width: 54%;
+}
+form.driverDetail div.row.callsign label {
+    width: 48%;
+}
+form.driverDetail div.row.callsign label span {
+    width: 80%;
+    display: block;
+    text-align: left;
+    margin-left: 7%;
+}
+form.driverDetail div.row.callsign input,
+form.driverDetail div.row.callsign select {
+    width: 90%;
+    display: block;
+    margin-left: 5%;
+}
+form.driverDetail div.row.callsign input {
+    border: 1px solid #ccc;
+    color: #fff;
+    background-color: #85b04e;
+}
+form.driverDetail div.row.visibility label {
+    padding: 2px 0;
+}
+form.driverDetail div.row.visibility label span {
+    width: 75%;
+    float: left;
+    text-align: left;
+    padding-top: 3px;
+}
+form.driverDetail div.row.visibility label input {
+    width: 5%;
+    float: left;
+    display: block;
+    margin-left: 15%;
+}
+
+form.driverDetail div.right div.row {
+    padding: 15px 0;
+}
+form.driverDetail div.right div.row div {
+    padding: 2px 0;
+}
+form.driverDetail div.right div.twoCol label {
+    width: 48%;
+}
+form.driverDetail div.right div.twoCol label span {
+    width: 99%;
+    display: block;
+    text-align: left;
+}
+form.driverDetail div.right div.twoCol label input,
+form.driverDetail div.right div.twoCol label select {
+    width: 98%;
+    display: block;
+}
+
+form.driverDetail div.right div.twoCol.commission div.right span.required {
+    text-align: center;
+    border-bottom: 1px solid #999;
+    display: block;
+    padding-bottom: 2px;
+}
+form.driverDetail div.right div.twoCol.commission div.right label {
+    display: inline-block;
+    width: 48%;
+}
+form.driverDetail div.right div.twoCol.commission div.right label span {
+    display: inline-block;
+    padding-top: 2px;
+    float: right;
+    width: 75%;
+}
+form.driverDetail div.right div.twoCol.commission div.right label input {
+    display: block;
+    float: right;
+    font-size: 1.1em;
+    width: 10%;
+}
+form.driverDetail div.right div.row div.tariff label span {
+    width: 49%;
+    float: left;
+    padding-top: 5px;
+}
+form.driverDetail div.right div.row div.tariff label input {
+    width: 47%;
+    float: right;
+}
+form.driverDetail div.right div.row div.terminal label span {
+    width: 25%;
+    float: right;
+    text-align: left;
+    padding-top: 2px;
+}
+form.driverDetail div.right div.row div.terminal label input {
+    width: 5%;
+    float: right;
+    display: block;
+}
+form.driverDetail div.right div.row div.twoCol {
+    margin-bottom: 10px;
+}
+form.driverDetail div.right div.row label.car_condition {
+    padding-top: 20px;
+    text-align: right;
+}
+form.driverDetail div.right div.row label.car_condition span {
+    width: 85%;
+    display: inline-block;
+}
+form.driverDetail div.right div.row label.car_condition input {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+}
+form.driverDetail div.right div.row div.notes label span {
+    width: 98%;
+    text-align: left;
+}
+form.driverDetail div.right div.row div.notes textarea {
+    width: 98%;
+}
+
+form.driverDetail input.error,
+form.driverDetail div.errorField,
+form.driverDetail textarea.error
+{
+    -webkit-animation: error_input_pulse 2s infinite;
+    animation: error_input_pulse 2s infinite;
+}
+
+@-webkit-keyframes error_input_pulse {
+    0% {
+        box-shadow: 0 0 7px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 7px rgba(255, 0, 0, 0.95);
+    }
+    100% {
+        box-shadow: 0 0 7px rgba(255, 0, 0, 0.5);
+    }
+}
+@keyframes error_input_pulse {
+    0% {
+        box-shadow: 0 0 7px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 7px rgba(255, 0, 0, 0.95);
+    }
+    100% {
+        box-shadow: 0 0 7px rgba(255, 0, 0, 0.5);
+    }
+}

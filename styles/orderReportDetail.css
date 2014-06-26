@@ -1,0 +1,214 @@
+﻿/* 
+    Document   : orderReportDetail styles for screen media
+    Created on : 22/05/2013
+*/
+form.reportOrderDetail {
+    font-size: 0.95em;
+    padding-top: 5px;
+    overflow: hidden;
+}
+
+form.reportOrderDetail div.left {
+    width: 45%
+}
+form.reportOrderDetail div.left.map {
+    height: 410px;
+}
+form.reportOrderDetail div.right {
+    width: 53%;
+    /*height: 620px;*/
+}
+form.reportOrderDetail fieldset,
+form.reportOrderDetail textarea {
+    border: 1px solid #aaa;
+}
+form.reportOrderDetail fieldset {
+    margin-top: 10px;
+}
+form.reportOrderDetail fieldset legend {
+    padding: 0 5px;
+    margin: 0 0 10px 10px;
+    font-size: 1.2em;
+}
+form.reportOrderDetail label {
+    display: block;
+    padding: 1px 0;
+    margin: 0;
+}
+form.reportOrderDetail div.right label span {
+    width: 50%;
+    margin-right: 1%;
+    text-align: right;
+    display: inline-block;
+}
+form.reportOrderDetail div label span:after {
+    content: ":"
+}
+form.reportOrderDetail label input,
+form.reportOrderDetail label select {
+    width: 47%;
+    display: inline-block;
+    border: 1px solid #aaa;
+}
+form.reportOrderDetail label select,
+form.reportOrderDetail fieldset label select {
+    margin-left: -5px;
+}
+
+form.reportOrderDetail label:nth-child(2n+1) {
+    background-color: #eee;
+}
+form.reportOrderDetail label:nth-child(2n+1) input,
+form.reportOrderDetail label:nth-child(2n+1) select {
+    background-color: #eee;
+}
+form.reportOrderDetail label:nth-child(2n) {
+    background-color: #fff;
+}
+form.reportOrderDetail label:nth-child(2n) input,
+form.reportOrderDetail label:nth-child(2n) select,
+form.reportOrderDetail label:nth-child(2n) textarea {
+    background-color: #fff;
+}
+form.reportOrderDetail label input:disabled,
+form.reportOrderDetail label select:disabled {
+    border: none;
+}
+form.reportOrderDetail label textarea {
+    width: 98%;
+}
+form.reportOrderDetail fieldset {
+    margin-top: 5px;
+    padding: 0 5px;
+}
+form.reportOrderDetail fieldset legend {
+    padding: 0 5px;
+    margin: 0 0 5px 15px;
+    font-size: 1.1em;
+}
+form.reportOrderDetail fieldset textarea {
+    width: 97%;
+    margin: 0 0 1% 1%;
+}
+form.reportOrderDetail fieldset textarea:disabled {
+    border: none;
+    background-color: #fff;
+}
+
+form.reportOrderDetail fieldset.route {
+    position: relative;
+}
+form.reportOrderDetail fieldset.route div label,
+form.reportOrderDetail fieldset.route div input {
+    background-color: #fff;
+}
+
+form.reportOrderDetail fieldset.route div.point {
+    position: relative;
+}
+form.reportOrderDetail fieldset.route div.point label {
+    float: left;
+    margin-right: 2%;
+}
+form.reportOrderDetail fieldset.route div.point label.street {
+    width: 65%;
+}
+form.reportOrderDetail fieldset.route div.point label.house {
+    width: 25%;
+}
+form.reportOrderDetail fieldset.route div.point button {
+    width: 5%;
+    float: left;
+}
+
+form.reportOrderDetail fieldset.route div.point span {
+    text-align: right;
+    display: inline-block;
+}
+form.reportOrderDetail fieldset.route div.point input {
+    display: inline-block;
+    /*border: 1px dotted red;*/
+}
+form.reportOrderDetail fieldset.route div.point label.street span {
+    width: 23%;
+    margin-right: 1%;
+}
+form.reportOrderDetail fieldset.route div.point label.street input {
+    width: 72%;
+}
+form.reportOrderDetail fieldset.route div.point label.house span {
+    width: 40%;
+}
+form.reportOrderDetail fieldset.route div.point label.house input {
+    width: 48%;
+}
+
+form.reportOrderDetail fieldset.route div.dir {
+    padding-top: 10px;
+}
+form.reportOrderDetail fieldset.route div.dir label {
+    display: inline-block;
+    width: 48%;
+}
+form.reportOrderDetail fieldset.route div.dir label input {
+    width: 10%;
+    display: block;
+    float: left;
+}
+form.reportOrderDetail fieldset.route div.dir label span {
+    width: 80%;
+    display: block;
+    float: right;
+    padding-top: 2px;
+    text-align: left;
+}
+form.reportOrderDetail fieldset.route div.dir label span:after {
+    content: "";
+}
+
+form.reportOrderDetail fieldset.route button.plusWay,
+form.reportOrderDetail fieldset.route button.minusWay {
+    border: none;
+    cursor: pointer;
+}
+form.reportOrderDetail fieldset.route button.minusWay {
+    background: url(../images/minus.png) 0 1px no-repeat;
+    padding: 0 2px 0 15px;
+    display: block;
+    float: right;
+}
+form.reportOrderDetail fieldset.route button.plusWay {
+    padding: 0 2px 7px 22px;
+    display: inline-block;
+    color: #2e267c;
+    text-decoration: underline;
+    transition: all 0.3s;
+    background: url(../images/plusWay.png) 0 0 no-repeat;
+}
+form.reportOrderDetail fieldset.route button.plusWay:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+form.reportOrderDetail fieldset.route button.minusWay.hide,
+form.reportOrderDetail fieldset.route button.minusWay:disabled {
+    display: none;
+}
+
+form.reportOrderDetail fieldset.route select.loadAddress {
+    position: absolute;
+    width: 195px;
+}
+
+form.reportOrderDetail fieldset.clientInfo {
+    padding: 0 8px;
+}
+form.reportOrderDetail fieldset.clientInfo label span {
+    width: 45%;
+    margin-right: 2%;
+    text-align: right;
+    display: inline-block;
+}
+form.reportOrderDetail fieldset.clientInfo label input {
+    width: 50%;
+    display: inline-block;
+}

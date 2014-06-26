@@ -1,0 +1,15 @@
+#php_value display_errors 1
+#php_value error_reporting 2047
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+RewriteCond %{REQUEST_URI} ^cron.*
+RewriteRule 'cron/cron.php' cron/cron.php [QSA,L]
+
+AddDefaultCharset UTF8

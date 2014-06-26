@@ -1,0 +1,142 @@
+/* 
+    Document   : orderDelete styles for screen media
+    Created on : 30/05/2014
+*/
+form.orderDelete {
+    padding: 10px;
+    overflow: hidden;
+}
+form.orderDelete fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #999;
+    border-radius: 7px;
+    padding: 10px;
+}
+form.orderDelete fieldset:last-child {
+    margin-bottom: 0;
+}
+form.orderDelete fieldset legend {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    padding: 0 10px;
+    margin-left: 20px;
+    display: inline-block;
+}
+form.orderDelete fieldset label.reason {
+    display: block;
+    margin-top: 25px;
+}
+form.orderDelete fieldset label.reason span {
+    display: block;
+    float: left;
+    margin-top: 2px;
+    font-weight: bold;
+}
+form.orderDelete fieldset label.reason input {
+    display: block;
+    float: left;
+}
+
+form.orderDelete fieldset div.row {
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+}
+form.orderDelete fieldset div.row div.left {
+    width: 30%;
+}
+form.orderDelete fieldset div.row div.right {
+    width: 67%;
+}
+form.orderDelete fieldset div.row div.right p {
+    margin-bottom: 10px;
+}
+form.orderDelete fieldset div.row div.right p:last-child {
+    margin-bottom: 0;
+}
+form.orderDelete fieldset div.row div.right p label.callsign,
+form.orderDelete fieldset div.row div.right p label.date_executed {
+    display: inline-block;
+    width: 48%;
+}
+form.orderDelete fieldset div.row div.right p label.callsign {
+    margin-right: 2%;
+}
+form.orderDelete fieldset div.row div.right p label.callsign input,
+form.orderDelete fieldset div.row div.right p label.date_executed input {
+    display: inline-block;
+    width: 50%;
+}
+form.orderDelete fieldset div.row div.right p label.callsign span,
+form.orderDelete fieldset div.row div.right p label.date_executed span {
+    display: inline-block;
+    margin-right: 2%;
+    width: 45%;
+    text-align: right;
+}
+form.orderDelete fieldset div.row div.right p label.hour_executed,
+form.orderDelete fieldset div.row div.right p label.min_executed,
+form.orderDelete fieldset div.row div.right p label.sec_executed {
+    display: inline-block;
+    width: 30%;
+    margin-right: 3%;
+}
+form.orderDelete fieldset div.row div.right p label.sec_executed {
+    margin-right: 0;
+}
+form.orderDelete fieldset div.row div.right p label.hour_executed input,
+form.orderDelete fieldset div.row div.right p label.min_executed input,
+form.orderDelete fieldset div.row div.right p label.sec_executed input {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+}
+form.orderDelete fieldset div.row div.right p label.hour_executed span,
+form.orderDelete fieldset div.row div.right p label.min_executed span,
+form.orderDelete fieldset div.row div.right p label.sec_executed span {
+    display: inline-block;
+    text-align: right;
+    margin-right: 3%;
+    width: 42%;
+}
+
+form.orderDelete fieldset div.failureClient div.right p {
+    margin-bottom: 5px;
+}
+
+form.orderDelete fieldset div.row.failureDriver {
+    border-bottom: none;
+}
+form.orderDelete fieldset div.failureDriver div.right label span {
+    display: block;
+    margin: 3px 0;
+}
+form.orderDelete fieldset div.failureDriver div.right label textarea {
+    width: 98%;
+    display: block;
+}
+
+form.orderDelete fieldset.additional div.left {
+    width: 60%;
+}
+form.orderDelete fieldset.additional div.left label {
+    display: block;
+}
+form.orderDelete fieldset.additional div.left label.status {
+    margin-top: 10px;
+}
+form.orderDelete fieldset.additional div.left label.status span {
+    width: 40%;
+    margin-right: 2%;
+    display: inline-block;
+}
+form.orderDelete fieldset.additional div.left label.status select {
+    width: 55%;
+    display: inline-block;
+}
+form.orderDelete fieldset.additional div.right {
+    width: 38%;
+}
+form.orderDelete fieldset.additional div.right textarea {
+    width: 97%;
+    display: block;
+}

@@ -1,0 +1,131 @@
+<div class="warning">Поля, отмеченные <span class="required"></span> обязательны</div>
+<div class="error"></div>
+<input type="hidden" name="driverId" value="<%= driver_id %>" />
+<div class="left">
+    <div class="row group">
+        <div class="col fullName">
+            <label><span class="required">Фамилия:</span><input type="text" name="driver[surname]" value="<%= driver_surname %>" /></label>
+            <label><span class="required">Имя:</span><input type="text" name="driver[name]" value="<%= driver_name %>" /></label>
+            <label><span class="required">Отчество:</span><input type="text" name="driver[patronymic]" value="<%= driver_patronymic %>" /></label>
+            <label><span>Статус:</span>
+                <select name="taxi[status]" >
+                    <%
+                        for(var i = 0; i < StatusTypes.length; i++){
+                            if(taxi_status === StatusTypes[i].id){
+                                %><option selected="selected" value="<%= StatusTypes[i].id%>"><%= StatusTypes[i].name %></option>
+                            <%}
+                            else {
+                               %><option value="<%= StatusTypes[i].id%>"><%= StatusTypes[i].name %></option>
+                            <%}
+                        }
+                    %>
+                </select>
+            </label>
+        </div>
+        <div class="col photo">
+            <input id="driverPhotoUpload" type="file" name="driverPhoto" style="display: none;">
+            <img src="<%= getUrl(driver_photo) %>" />
+            <button id="loadDriverPhoto" type="button">Загрузить</button>
+        </div>
+    </div>
+    <div class="row personalInfo">
+        <label><span class="required">Дата рождения:</span><input type="text" name="driver[dob]" value="<%= driver_dob %>" /></label>
+        <label><span class="required">Паспорт:</span><input type="text" name="driver[passport]" value="<%= driver_passport %>" /></label>
+        <label><span class="required">Телефон:</span><input type="text" name="driver[mobile_phone]" value="<%= driver_mobile_phone %>" /></label>
+        <label><span>Телефон 2:</span><input type="text" name="driver[phone]" value="<%= driver_phone %>" /></label>
+        <label><span class="required">Адрес:</span><input type="text" name="driver[address]" value="<%= driver_address %>" /></label>
+        <label><span class="required">Дата приёма:</span><input type="text" name="driver[admission_date]" value="<%= driver_admission_date %>" /></label>
+        <label><span>Дата увольнения:</span><input type="text" name="driver[dismissal_date]" value="<%= driver_dismissal_date %>" /></label>
+    </div>
+    <div class="row group callsign">
+        <label class="left"><span class="required">Позывной:</span><input type="text" name="driver[callsign]" value="<%= driver_callsign %>" /></label>
+        <label class="right"><span class="<%= (driver_id ? '' : 'required') %>">Пароль:</span>
+            <input type="text" name="driver[password]" value="" />
+        </label>
+    </div>
+    <div class="row visibility group">
+        <label class="group"><input type="checkbox" name="car[self_carport]" <% if(car_self_carport && car_self_carport != '0'){ %> checked="checked" <%}%> /><span>Свой автопарк</span></label>
+        <label class="group"><input type="checkbox" name="driver[see_non_cash]" <% if(driver_see_non_cash && driver_see_non_cash != '0'){ %> checked="checked" <%}%> /><span>Видимость заказа по безналу</span></label>
+        <label class="group"><input type="checkbox" name="driver[only_non_cash]" <% if(driver_only_non_cash && driver_only_non_cash != '0'){ %> checked="checked" <%}%> /><span>Видит только безнал если долг</span></label>
+        <label class="group"><input type="checkbox" name="driver[passenger_phone]" <% if(driver_passenger_phone && driver_passenger_phone != '0'){ %> checked="checked" <%}%> /><span>Видит телефон пассажира</span></label>
+    </div>
+</div>
+<div class="right">
+    <div class="row twoCol commission group">
+        <label class="left"><span class="required">Комиссия за заказ:</span>
+            <input type="text" name="car[commission]" value="<%= car_commission %>" />
+        </label>
+        <div class="right group"><span class="required">Величина измерения:</span>
+        <label class="left group"><span>Проценты</span>
+            <input <% if(car_commission_period_pay == 'PCT'){ %> checked="checked" <%}%> type="radio" name="car[commission_period_pay]" value="PCT" />
+        </label>
+        <label class="right group"><span>Гривны</span>
+            <input <% if(car_commission_period_pay == 'UAC'){ %> checked="checked" <%}%> type="radio" name="car[commission_period_pay]" value="UAC" />
+        </label>
+        </div>
+    </div>
+    <div class="row twoCol group">
+        <label class="left"><span class="required">Абонплата (грн):</span><input type="text" name="car[fee]" value="<%= car_fee %>" /></label>
+        <label class="right"><span class="required">Абонплата (период):</span>
+            <select name="car[fee_period]" >
+                    <option></option>
+                    <option <% if(car_fee_period == 'day'){ %> checked="checked" <%}%> value="day">День</option>
+                    <option <% if(car_fee_period == 'week'){ %> checked="checked" <%}%> value="week">Неделя</option>
+                    <option <% if(car_fee_period == 'month'){ %> checked="checked" <%}%> value="month">Месяц</option>
+            </select>
+        </label>
+    </div>
+    <div class="row">
+        <div class="tariff group">
+            <label><span>Индивидуальный тариф:</span><input type="text" name="car[tariff_ind]" value="<%= car_tariff_ind %>" /></label>
+        </div>
+        <div class="terminal group">
+            <label><span>Терминал</span><input type="checkbox" name="car[terminal]" <% if(car_terminal && car_terminal != '0'){ %> checked="checked" <%}%> /></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twoCol group">
+            <label class="left"><span class="required">Номер автомобиля:</span><input type="text" name="car[number]" value="<%= car_number %>" /></label>
+            <label class="right"><span class="required">Марка автомобиля:</span><input type="text" name="car[model]" value="<%= car_model %>" /></label>
+        </div>
+        <div class="twoCol group">
+            <label class="left"><span class="required">Цвет:</span>
+                <select name="car[color]" ><option></option>
+                    <%
+                        for(var i = 0; i < TaxiColors.length; i++){
+                            if(car_color === TaxiColors[i]){
+                                %><option selected="selected" value="<%= car_color %>"><%= car_color %></option>
+                            <%}
+                            else {
+                               %><option value="<%= TaxiColors[i] %>"><%= TaxiColors[i] %></option>
+                            <%}
+                        }
+                    %>
+                </select>
+            </label>
+            <label class="right"><span class="required">Год выпуска:</span><input type="text" name="car[year]" value="<%= car_year %>" /></label>
+        </div>
+        <div class="twoCol group">
+            <label class="left"><span>Тариф</span>
+                <select name="car[type]" >
+                    <%
+                        for(var i = 0; i < CarTypes.length; i++){
+                            if(car_type === CarTypes[i].id){
+                                %><option selected="selected" value="<%= CarTypes[i].id%>"><%= CarTypes[i].type %></option>
+                            <%}
+                            else {
+                               %><option value="<%= CarTypes[i].id%>"><%= CarTypes[i].type %></option>
+                            <%}
+                        }
+                    %>
+                </select>
+            </label>
+            <label class="right car_condition"><input type="checkbox" name="car[condition]" <% if(car_condition && car_condition != '0'){ %> checked="checked" <%}%> /><span>Кондиционер</span></label>
+        </div>
+        <div class="notes">
+            <label><span>Заметки:</span>
+                <textarea rows="6" name="car[notes]"><%= car_notes %></textarea>
+            </label>
+        </div>
+    </div>
+</div>
